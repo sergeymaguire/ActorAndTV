@@ -17,7 +17,7 @@ var TV = function() {
      ].join("\n\n");
 
      console.log(showData)
-     
+
      fs.appendFile("log.txt", showData + divider, function(err) {
        if (err) throw err;
        console.log(showData);
@@ -29,11 +29,7 @@ var TV = function() {
    var URL = "http://api.tvmaze.com/search/people?q=" + actor;
 
    request(URL, function(err, response, body) {
-     // parse the response body (string) to a JSON object
      var jsonData = JSON.parse(body);
-
-     // console.log(jsonData)
-
      let actorData = [
        'Name: ' + jsonData[0].person.name + "\n" +
        'Birthday: ' + jsonData[0].person.birthday + "\n" +
@@ -44,7 +40,6 @@ var TV = function() {
 
      fs.appendFile("log.txt", actorData, function(err) {
        if (err) throw err;
-       // console.log(showData);
      });
 
      console.log(actorData)
