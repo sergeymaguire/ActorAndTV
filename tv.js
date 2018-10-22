@@ -1,13 +1,9 @@
 var request = require("request");
 var fs = require("fs");
-
-// Create the TV constructor
 var TV = function() {
- // divider will be used as a spacer between the tv data we print in log.txt
  var divider =
    "\n------------------------------------------------------------\n\n";
 
- // findShow takes in the name of a tv show and searches the tvmaze API
  this.findShow = function(show) {
    var URL = "http://api.tvmaze.com/singlesearch/shows?q=" + show;
 
